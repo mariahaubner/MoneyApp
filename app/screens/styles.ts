@@ -1,12 +1,6 @@
 import { TextStyle, StyleSheet } from "react-native"
 import { color, spacing } from "../theme"
 
-const colors = {
-  purple: "#5D2555",
-  lightPurple: "#BAB6C8",
-  darkPurple: "#20162D",
-}
-
 const TEXT: TextStyle = {
   color: color.palette.white,
   fontFamily: "Montserrat",
@@ -15,8 +9,8 @@ const BOLD: TextStyle = { fontWeight: "bold" }
 
 const elements = StyleSheet.create({
   defaultButton: {
-    backgroundColor: colors.purple,
-    paddingHorizontal: spacing[4],
+    backgroundColor: color.palette.purple,
+    paddingHorizontal: spacing[3],
     paddingVertical: spacing[4],
   },
   image: {
@@ -25,6 +19,13 @@ const elements = StyleSheet.create({
     marginVertical: spacing[3],
     maxWidth: "100%",
   },
+  input: {
+    backgroundColor: color.palette.white,
+    borderRadius: 4,
+    height: 40,
+    marginVertical: spacing[2],
+    paddingHorizontal: spacing[2],
+  },
 })
 
 const container = StyleSheet.create({
@@ -32,7 +33,11 @@ const container = StyleSheet.create({
     paddingHorizontal: spacing[4],
     paddingVertical: spacing[4],
   },
-  footerContainer: { backgroundColor: colors.darkPurple },
+  footerContainer: { backgroundColor: color.palette.darkPurple },
+  form: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
   full: {
     flex: 1,
   },
@@ -45,12 +50,18 @@ const container = StyleSheet.create({
     backgroundColor: color.transparent,
     paddingHorizontal: spacing[4],
   },
+  welcomeFooterContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: spacing[2],
+    paddingVertical: spacing[4],
+  },
 })
 
 const text = StyleSheet.create({
   content: {
     ...TEXT,
-    color: colors.lightPurple,
+    color: color.palette.lightPurple,
     fontSize: 15,
     lineHeight: 22,
     marginBottom: spacing[5],

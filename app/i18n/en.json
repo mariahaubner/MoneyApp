@@ -2,7 +2,10 @@
   "common": {
     "ok": "OK!",
     "cancel": "Cancel",
-    "back": "Back"
+    "back": "Back",
+    "continue": "CONTINUE",
+    "gotoForm": "NEW ENTRY",
+    "gotoList": "SHOW LIST"
   },
   "errors": {
     "invalidEmail": "Invalid email address."
@@ -10,17 +13,10 @@
   "welcomeScreen": {
     "poweredBy": "POWERED BY BOWSER",
     "intro": "This is gonna be an App to track your spendings and generate statistics on them.",
-    "readyForLaunch": "Ready for launch.",
-    "continue": "CONTINUE"
+    "readyForLaunch": "Ready for launch."
   },
-  "demoScreen": {
-    "howTo": "HOW TO",
-    "title": "What’s In This Stack?",
-    "tagLine": "Congratulations, you’ve got a very advanced React Native app template here.  Take advantage of this boilerplate!",
-    "reactotron": "Demo Reactotron",
-    "androidReactotronHint": "If this doesn't work, ensure the Reactotron desktop app is running, run adb reverse tcp:9090 tcp:9090 from your terminal, and reload the app.",
-    "iosReactotronHint": "If this doesn't work, ensure the Reactotron desktop app is running and reload app."
-  },
+  "listScreen": {},
+  "formScreen": {},
   "storybook": {
     "placeholder": "Placeholder",
     "field": "Field"

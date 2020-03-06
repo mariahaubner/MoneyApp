@@ -8,7 +8,7 @@ const atmImage = require("./atm.png")
 
 export interface WelcomeScreenProps extends NavigationInjectedProps<{}> {}
 
-export const WelcomeScreen: React.FunctionComponent<WelcomeScreenProps> = props => {
+export const Page: React.FunctionComponent<WelcomeScreenProps> = props => {
   const listScreen = React.useMemo(() => () => props.navigation.navigate("list"), [
     props.navigation,
   ])
@@ -31,12 +31,18 @@ export const WelcomeScreen: React.FunctionComponent<WelcomeScreenProps> = props 
         <Text style={styles.text.title} preset="header" tx="welcomeScreen.readyForLaunch" />
       </Screen>
       <SafeAreaView style={styles.container.footerContainer}>
-        <View style={styles.container.footer}>
+        <View style={styles.container.welcomeFooterContainer}>
           <Button
             style={styles.elements.defaultButton}
             textStyle={styles.text.defaultButton}
-            tx="welcomeScreen.continue"
+            tx="common.gotoList"
             onPress={listScreen}
+          />
+          <Button
+            style={styles.elements.defaultButton}
+            textStyle={styles.text.defaultButton}
+            tx="common.gotoForm"
+            onPress={formScreen}
           />
         </View>
       </SafeAreaView>

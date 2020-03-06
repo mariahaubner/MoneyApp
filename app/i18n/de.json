@@ -2,7 +2,10 @@
   "common": {
     "ok": "OK!",
     "cancel": "Abbrechen",
-    "back": "Zurück"
+    "back": "Zurück",
+    "continue": "WEITER",
+    "gotoForm": "NEUER EINRAG",
+    "gotoList": "LISTE ANZEIGEN"
   },
   "errors": {
     "invalidEmail": "Ungültige E-Mail-Adresse."
@@ -10,9 +13,10 @@
   "welcomeScreen": {
     "poweredBy": "POWERED BY MAYFLOWER",
     "intro": "Das hier soll mal eine App werden, mit der man die eigenen Ausgaben tracken und irgendwann auch Auswertungen drüber laufen lassen kann.",
-    "readyForLaunch": "Los geht's.",
-    "continue": "WEITER"
+    "readyForLaunch": "Los geht's."
   },
+  "listScreen": {},
+  "formScreen": {},
   "storybook": {
     "placeholder": "Platzhalter",
     "field": "Feld"

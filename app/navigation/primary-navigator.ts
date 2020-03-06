@@ -1,11 +1,11 @@
 import { createStackNavigator } from "react-navigation-stack"
-import { WelcomeScreen } from "../screens"
+import { WelcomeScreen, FormScreen, ListScreen } from "../screens"
 
 export const PrimaryNavigator = createStackNavigator(
   {
     welcome: { screen: WelcomeScreen },
-    form: { screen: WelcomeScreen },
-    list: { screen: WelcomeScreen },
+    form: { screen: FormScreen },
+    list: { screen: ListScreen },
   },
   {
     headerMode: "none",
