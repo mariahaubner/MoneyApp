@@ -2,11 +2,12 @@ import * as Localization from "expo-localization"
 import i18n from "i18n-js"
 
 const en = require("./en")
+const de = require("./de")
 const ja = require("./ja")
 
 i18n.fallbacks = true
-i18n.translations = { en, ja }
+i18n.translations = { en, ja, de }
 
-const fallback = { languageTag: "en", isRTL: false }
+const fallback = { languageTag: "de", isRTL: false }
 
 i18n.locale = Localization.locale || fallback

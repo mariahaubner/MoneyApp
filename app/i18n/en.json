@@ -9,6 +9,7 @@
   },
   "welcomeScreen": {
     "poweredBy": "POWERED BY BOWSER",
+    "intro": "This is gonna be an App to track your spendings and generate statistics on them.",
     "readyForLaunch": "Ready for launch.",
     "continue": "CONTINUE"
   },
