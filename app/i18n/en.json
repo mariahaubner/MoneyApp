@@ -5,23 +5,29 @@
     "back": "Back",
     "continue": "CONTINUE",
     "gotoForm": "NEW ENTRY",
-    "gotoList": "SHOW LIST"
+    "gotoList": "SHOW LIST",
+    "poweredBy": "POWERED BY BOWSER"
   },
   "errors": {
     "invalidEmail": "Invalid email address."
   },
   "welcomeScreen": {
-    "poweredBy": "POWERED BY BOWSER",
     "intro": "This is gonna be an App to track your spendings and generate statistics on them.",
     "readyForLaunch": "Ready for launch."
   },
-  "listScreen": {},
+  "listScreen": {
+    "title": "All entries"
+  },
   "formScreen": {
     "title": "Add new entry",
     "article": "Article",
     "shop": "Shop",
     "count": "Count",
-    "categories": "Categories"
+    "categories": "Categories",
+    "articlePlaceholder": "Enter article...",
+    "shopPlaceholder": "Enter shop...",
+    "countPlaceholder": "Enter count...",
+    "categoriesPlaceholder": "Enter categories..."
   },
   "storybook": {
     "placeholder": "Placeholder",

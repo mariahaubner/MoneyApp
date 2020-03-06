@@ -1,4 +1,4 @@
-import { TextStyle, StyleSheet } from "react-native"
+import { TextStyle, StyleSheet, ViewStyle } from "react-native"
 import { color, spacing } from "../theme"
 
 const TEXT: TextStyle = {
@@ -6,6 +6,11 @@ const TEXT: TextStyle = {
   fontFamily: "Montserrat",
 }
 const BOLD: TextStyle = { fontWeight: "bold" }
+
+const FLEXROW: ViewStyle = {
+  flexDirection: "row",
+  justifyContent: "space-between",
+}
 
 const elements = StyleSheet.create({
   defaultButton: {
@@ -15,17 +20,12 @@ const elements = StyleSheet.create({
   },
   image: {
     alignSelf: "center",
-    borderRadius: 16,
+    borderRadius: 4,
     marginVertical: spacing[3],
     maxWidth: "100%",
   },
-  input: {
-    backgroundColor: color.palette.white,
-    borderRadius: 4,
-    height: 40,
-    marginVertical: spacing[2],
-    paddingHorizontal: spacing[2],
-  },
+  input1: { flex: 1 },
+  input5: { flex: 5, marginRight: spacing[4] },
 })
 
 const container = StyleSheet.create({
@@ -34,10 +34,6 @@ const container = StyleSheet.create({
     paddingVertical: spacing[4],
   },
   footerContainer: { backgroundColor: color.palette.darkPurple },
-  form: {
-    flexDirection: "column",
-    justifyContent: "space-between",
-  },
   full: {
     flex: 1,
   },
@@ -46,13 +42,15 @@ const container = StyleSheet.create({
     paddingHorizontal: 0,
     paddingTop: spacing[3],
   },
+  row: {
+    ...FLEXROW,
+  },
   screen: {
     backgroundColor: color.transparent,
     paddingHorizontal: spacing[4],
   },
   welcomeFooterContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    ...FLEXROW,
     paddingHorizontal: spacing[2],
     paddingVertical: spacing[4],
   },

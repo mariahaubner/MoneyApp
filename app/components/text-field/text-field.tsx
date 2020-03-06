@@ -14,10 +14,12 @@ const CONTAINER: ViewStyle = {
 // the base styling for the TextInput
 const INPUT: TextStyle = {
   fontFamily: typography.primary,
-  color: color.text,
+  color: color.palette.black,
   minHeight: 44,
   fontSize: 18,
   backgroundColor: color.palette.white,
+  borderRadius: 4,
+  paddingHorizontal: spacing[2],
 }
 
 // currently we have no presets, but that changes quickly when you build your app.

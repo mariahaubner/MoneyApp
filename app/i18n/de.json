@@ -5,23 +5,29 @@
     "back": "Zurück",
     "continue": "WEITER",
     "gotoForm": "NEUER EINRAG",
-    "gotoList": "LISTE ANZEIGEN"
+    "gotoList": "LISTE ANZEIGEN",
+    "poweredBy": "POWERED BY MAYFLOWER"
   },
   "errors": {
     "invalidEmail": "Ungültige E-Mail-Adresse."
   },
   "welcomeScreen": {
-    "poweredBy": "POWERED BY MAYFLOWER",
     "intro": "Das hier soll mal eine App werden, mit der man die eigenen Ausgaben tracken und irgendwann auch Auswertungen drüber laufen lassen kann.",
     "readyForLaunch": "Los geht's."
   },
-  "listScreen": {},
+  "listScreen": {
+    "title": "Alle Einträge"
+  },
   "formScreen": {
     "title": "Neuen Eintrag anlegen",
     "article": "Artikel",
     "shop": "Laden",
     "count": "Anzahl",
-    "categories": "Kategorien"
+    "categories": "Kategorien",
+    "articlePlaceholder": "Artikel eingeben...",
+    "shopPlaceholder": "Laden eingeben...",
+    "countPlaceholder": "Anzahl eingeben...",
+    "categoriesPlaceholder": "Kategorien eingeben..."
   },
   "storybook": {
     "placeholder": "Platzhalter",
