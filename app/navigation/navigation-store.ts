@@ -30,7 +30,7 @@ export const NavigationStoreModel = NavigationEvents.named("NavigationStore")
     state: types.optional(types.frozen(), DEFAULT_STATE),
   })
   .preProcessSnapshot(snapshot => {
-    if (!snapshot || !Boolean(snapshot.state)) return snapshot
+    if (!snapshot || !snapshot.state) return snapshot
 
     try {
       // make sure react-navigation can handle our state
@@ -57,7 +57,7 @@ export const NavigationStoreModel = NavigationEvents.named("NavigationStore")
      * @param action The new navigation action to perform
      * @param shouldPush Should we push or replace the whole stack?
      */
-    dispatch(action: NavigationAction, shouldPush: boolean = true) {
+    dispatch(action: NavigationAction, shouldPush = true) {
       const previousNavState = shouldPush ? self.state : null
       self.state = RootNavigator.router.getStateForAction(action, previousNavState) || self.state
       self.fireSubscribers(action, previousNavState, self.state)

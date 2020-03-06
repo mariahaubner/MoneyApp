@@ -4,10 +4,13 @@ import { NavigationInjectedProps } from "react-navigation"
 import { Button, Header, Screen, Text, Wallpaper, BulletItem } from "../../components"
 import { color } from "../../theme"
 import { styles } from "../styles"
+import { useStores } from "../../models/root-store"
 
 export interface WelcomeScreenProps extends NavigationInjectedProps<{}> {}
 
 export const Page: React.FunctionComponent<WelcomeScreenProps> = props => {
+  const entryStore = useStores().entryStore
+
   const goBack = React.useMemo(() => () => props.navigation.goBack(null), [props.navigation])
   const formScreen = React.useMemo(() => () => props.navigation.navigate("form"), [
     props.navigation,
@@ -25,8 +28,9 @@ export const Page: React.FunctionComponent<WelcomeScreenProps> = props => {
           titleStyle={styles.text.header}
         />
         <Text style={styles.text.title} text="Liste" />
-        <BulletItem text="Eintrag 1" />
-        <BulletItem text="Eintrag 2" />
+        {entryStore.map((entry, idx) => (
+          <BulletItem key={idx} text={entry.article} />
+        ))}
       </Screen>
       <SafeAreaView style={styles.container.footerContainer}>
         <View style={styles.container.footer}>

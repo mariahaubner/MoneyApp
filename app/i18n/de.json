@@ -16,7 +16,13 @@
     "readyForLaunch": "Los geht's."
   },
   "listScreen": {},
-  "formScreen": {},
+  "formScreen": {
+    "title": "Neuen Eintrag anlegen",
+    "article": "Artikel",
+    "shop": "Laden",
+    "count": "Anzahl",
+    "categories": "Kategorien"
+  },
   "storybook": {
     "placeholder": "Platzhalter",
     "field": "Feld"

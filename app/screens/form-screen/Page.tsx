@@ -5,14 +5,27 @@ import { Button, Header, Screen, Text, Wallpaper } from "../../components"
 import { color } from "../../theme"
 import { styles } from "../styles"
 import { TextInput } from "react-native-gesture-handler"
+import { useStores } from "../../models/root-store"
 
-export interface WelcomeScreenProps extends NavigationInjectedProps<{}> {}
+export interface Props extends NavigationInjectedProps<{}> {}
 
-export const Page: React.FunctionComponent<WelcomeScreenProps> = props => {
+const DELIMITER = " "
+
+export const Page: React.FunctionComponent<Props> = props => {
+  const rootStore = useStores()
+
   const goBack = React.useMemo(() => () => props.navigation.goBack(null), [props.navigation])
   const listScreen = React.useMemo(() => () => props.navigation.navigate("list"), [
     props.navigation,
   ])
+
+  const inistalEntry = {
+    article: "",
+    count: 0,
+    shop: "",
+    categories: [""],
+  }
+  const [entry, setEntry] = React.useState(inistalEntry)
 
   return (
     <View style={styles.container.full}>
@@ -25,33 +38,36 @@ export const Page: React.FunctionComponent<WelcomeScreenProps> = props => {
           style={styles.container.header}
           titleStyle={styles.text.header}
         />
-        <Text style={styles.text.title} text="Neuen Eintrag anlegen" />
+        <Text style={styles.text.title} tx="formScreen.title" />
         <View>
           <TextInput
             style={styles.elements.input}
-            placeholder="Artikel"
-            onChangeText={() => undefined}
-            value={undefined}
+            placeholder="formScreen.article"
+            onChangeText={article => setEntry({ ...entry, article })}
+            value={entry.article}
           />
           <TextInput
             style={styles.elements.input}
-            placeholder="Anzahl"
+            placeholder="formScreen.count"
             keyboardType="number-pad"
-            onChangeText={() => undefined}
-            value={undefined}
+            onChangeText={value => setEntry({ ...entry, count: parseInt(value) })}
+            value={entry.count.toString()}
           />
           <TextInput
             style={styles.elements.input}
-            placeholder="Laden"
-            onChangeText={() => undefined}
-            value={undefined}
+            placeholder="formScreen.shop"
+            onChangeText={shop => setEntry({ ...entry, shop })}
+            value={entry.shop}
           />
           <TextInput
             style={styles.elements.input}
-            placeholder="Kategorie(n)"
-            onChangeText={() => undefined}
-            value={undefined}
-          />
+            placeholder="formScreen.categories"
+            onChangeText={value => {
+              setEntry({ ...entry, categories: value.split(DELIMITER) })
+            }}
+          >
+            {entry.categories.join(DELIMITER)}
+          </TextInput>
         </View>
       </Screen>
       <SafeAreaView style={styles.container.footerContainer}>
@@ -60,7 +76,10 @@ export const Page: React.FunctionComponent<WelcomeScreenProps> = props => {
             style={styles.elements.defaultButton}
             textStyle={styles.text.defaultButton}
             tx="common.ok"
-            onPress={() => undefined}
+            onPress={() => {
+              rootStore.addEntry(entry)
+              listScreen()
+            }}
           />
         </View>
       </SafeAreaView>

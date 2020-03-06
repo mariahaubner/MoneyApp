@@ -16,7 +16,13 @@
     "readyForLaunch": "Ready for launch."
   },
   "listScreen": {},
-  "formScreen": {},
+  "formScreen": {
+    "title": "Add new entry",
+    "article": "Article",
+    "shop": "Shop",
+    "count": "Count",
+    "categories": "Categories"
+  },
   "storybook": {
     "placeholder": "Placeholder",
     "field": "Field"
