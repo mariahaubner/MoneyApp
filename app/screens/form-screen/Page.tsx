@@ -1,7 +1,7 @@
 import * as React from "react"
 import { View, SafeAreaView } from "react-native"
 import { NavigationInjectedProps } from "react-navigation"
-import { Button, TextField, ViewScreen } from "../../components"
+import { Button, TextField, ViewScreen, DatePicker } from "../../components"
 import { styles } from "../styles"
 import { useStores } from "../../models/root-store"
 
@@ -14,13 +14,14 @@ export const Page: React.FunctionComponent<Props> = props => {
     props.navigation,
   ])
 
-  const inistalEntry = {
+  const initalEntry = {
     article: "",
     count: 0,
     shop: "",
     categories: [""],
+    date: new Date(),
   }
-  const [entry, setEntry] = React.useState(inistalEntry)
+  const [entry, setEntry] = React.useState(initalEntry)
 
   return (
     <ViewScreen
@@ -36,6 +37,7 @@ export const Page: React.FunctionComponent<Props> = props => {
               tx="common.ok"
               onPress={() => {
                 rootStore.addEntry(entry)
+                setEntry(initalEntry)
                 listScreen()
               }}
             />
@@ -61,21 +63,27 @@ export const Page: React.FunctionComponent<Props> = props => {
             value={entry.count.toString()}
           />
         </View>
-        <TextField
-          labelTx="formScreen.shop"
-          placeholderTx="formScreen.shopPlaceholder"
-          onChangeText={shop => setEntry({ ...entry, shop })}
-          value={entry.shop}
-        />
-        <TextField
-          labelTx="formScreen.categories"
-          placeholderTx="formScreen.categoriesPlaceholder"
-          onChangeText={value => {
-            setEntry({ ...entry, categories: value.split(DELIMITER) })
-          }}
-        >
-          {entry.categories.join(DELIMITER)}
-        </TextField>
+        <View>
+          <TextField
+            labelTx="formScreen.shop"
+            placeholderTx="formScreen.shopPlaceholder"
+            onChangeText={shop => setEntry({ ...entry, shop })}
+            value={entry.shop}
+          />
+        </View>
+        <View>
+          <TextField
+            labelTx="formScreen.categories"
+            placeholderTx="formScreen.categoriesPlaceholder"
+            onChangeText={value => {
+              setEntry({ ...entry, categories: value.split(DELIMITER) })
+            }}
+          >
+            {entry.categories.join(DELIMITER)}
+          </TextField>
+        </View>
+
+        <DatePicker value={entry.date} onChange={date => setEntry({ ...entry, date })} />
       </View>
     </ViewScreen>
   )

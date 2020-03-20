@@ -27,7 +27,8 @@
     "articlePlaceholder": "Artikel eingeben...",
     "shopPlaceholder": "Laden eingeben...",
     "countPlaceholder": "Anzahl eingeben...",
-    "categoriesPlaceholder": "Kategorien eingeben..."
+    "categoriesPlaceholder": "Kategorien eingeben...",
+    "date": "Datum"
   },
   "storybook": {
     "placeholder": "Platzhalter",

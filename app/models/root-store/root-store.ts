@@ -7,6 +7,7 @@ export const EntryModel = types
     count: types.number,
     shop: types.optional(types.string, ""),
     categories: types.optional(types.array(types.string), []),
+    date: types.Date
   })
   .actions(self => ({
     editEntry(entry) {
@@ -14,6 +15,7 @@ export const EntryModel = types
       self.categories = entry.categories
       self.count = entry.count
       self.shop = entry.shop
+      self.date = entry.date
     },
   }))
 

@@ -24,6 +24,7 @@
     "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^2.3.0",
     "@react-native-community/masked-view": "0.1.5",
     "apisauce": "1.0.3",
     "expo": "~36.0.0",
